@@ -1,19 +1,33 @@
-
-import './App.css';
+import React, { useState } from 'react';
+import styled from 'styled-components'
 import CountriesList from './components/CountriesList';
 import Filter from './components/Filter';
 import Header from './components/Header';
 import Search from './components/Search';
 
 function App() {
+
+  
   return (
-    <div className="App">
+    <Container className="App">
      <Header />
-     <Search />
-     <Filter />
+     <TopContainer>
+        <Search />
+        <Filter />
+     </TopContainer>
+    
     < CountriesList />
-    </div>
+    </Container>
   );
 }
 
+const TopContainer = styled.div`
+display:flex;
+justify-content:space-between;
+padding: 0 2.5rem;
+`
+
+const Container =styled.div`
+box-sizing: border-box;
+`
 export default App;
